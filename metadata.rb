@@ -18,3 +18,6 @@ chef_version '>= 14.0'
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/mongo'
+
+depends 'apt'
+# depends 'sc-mongodb', '~> 1.2.0'
