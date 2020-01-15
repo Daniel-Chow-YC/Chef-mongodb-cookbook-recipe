@@ -15,6 +15,11 @@ describe port(27017) do
   it { should be_listening }
 end
 
+## THIS TEST IS FOR THE BASH COMMAND WAY OF INSTALLING MONGOD
+# describe service 'mongod' do
+#   it { should be_enabled }
+# end
+
 describe service 'mongodb' do
   it { should be_enabled }
 end
