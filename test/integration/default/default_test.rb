@@ -21,6 +21,11 @@ describe service 'mongod' do
   it { should be_enabled }
 end
 
+describe package 'mongodb-org' do
+  it { should be_installed}
+  its("version"){ should match /3\./}
+end
+
 ## THIS TEST IS FOR THE CHEF WAY OF INSTALLING MongoDB
 # describe service 'mongodb' do
 #   it { should be_enabled }
