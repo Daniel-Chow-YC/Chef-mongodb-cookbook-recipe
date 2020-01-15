@@ -31,6 +31,8 @@ include_recipe 'apt'
 #   action [:start, :enable]
 # end
 
+
+
 ## THIS CODE WORKS FOR MONGOD VERSION 3.2.20
 # bash 'install_mongod' do
 #   user 'root'
@@ -43,6 +45,8 @@ include_recipe 'apt'
 #   sudo systemctl enable mongod.service
 #   EOH
 # end
+
+
 
 package 'mongodb' do
   action :install
