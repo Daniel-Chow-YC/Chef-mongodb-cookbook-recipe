@@ -21,3 +21,6 @@ Create a recipe that installs and configures this cookbook correctly to pass all
 ## SSH into VM
 - vagrant global-status
 - vagrant ssh <id_number>
+
+## metadata file
+- Import cookbooks from online
