@@ -46,6 +46,26 @@ bash 'install_mongod' do
   EOH
 end
 
+execute 'restart_mongod' do
+  command 'sudo systemctl restart mongod'
+  action :nothing
+end
+
+execute 'restart_mongod.service' do
+  command 'sudo systemctl enable mongod.service'
+  action :nothing
+end
+
+template '/etc/mongod.conf' do
+  source 'mongod.conf.erb'
+  notifies :run, 'execute[restart_mongod]', :immediately
+end
+
+template '/lib/systemd/system/mongod.service' do
+  source 'mongod.service.erb'
+  notifies :run, 'execute[restart_mongod.service]', :immediately
+end
+
 
 
 # package 'mongodb' do
