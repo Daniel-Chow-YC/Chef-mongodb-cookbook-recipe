@@ -21,7 +21,12 @@ Create a recipe that installs and configures this cookbook correctly to pass all
 ## SSH into VM
 - vagrant global-status
 - vagrant ssh <id_number>
-- Or kitchen login 
+- Or
+  - kitchen login
 
 ## metadata file
 - Import cookbooks from online
+
+## Test on AWS
+- aws configure
+-  KITCHEN_YAML=kitchen.cloud.yml kitchen test
