@@ -7,10 +7,10 @@
 require 'spec_helper'
 
 describe 'mongo::default' do
-  context 'When all attributes are default, on Ubuntu 18.04' do
+  context 'When all attributes are default, on Ubuntu 16.04' do
     # for a complete list of available platforms and versions see:
     # https://github.com/chefspec/fauxhai/blob/master/PLATFORMS.md
-    platform 'ubuntu', '18.04'
+    platform 'ubuntu', '16.04'
 
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
@@ -25,7 +25,7 @@ describe 'mongo::default' do
     # end
 
     it 'should install mongodb' do
-      expect(chef_run).to install_package ('mongodb')
+      expect(chef_run).to install_package ('mongodb-org')
     end
 
     # describe packages(/mongodb/) do

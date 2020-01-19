@@ -58,6 +58,7 @@ end
 
 template '/etc/mongod.conf' do
   source 'mongod.conf.erb'
+  variables bind_ip: node['mongod']['bind_ip'], port: node['mongod']['port']
   notifies :run, 'execute[restart_mongod]', :immediately
 end
 
