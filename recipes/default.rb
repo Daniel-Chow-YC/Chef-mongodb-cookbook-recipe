@@ -68,13 +68,18 @@ template '/lib/systemd/system/mongod.service' do
 end
 
 
-
-# package 'mongodb' do
-#   action :install
-#   # version '3.2.20'
+## THIS WORKS AS WELL FOR INSTALLING MONGODB VERSION 3
+# apt_repository 'mongodb-org' do
+#   uri 'http://repo.mongodb.org/apt/ubuntu/'
+#   distribution 'xenial/mongodb-org/3.2'
+#   components ['multiverse']
+#   keyserver 'hkp://keyserver.ubuntu.com:80'
+#   key 'EA312927'
+#   action :add
 # end
 #
-# # services
-# service 'mongodb' do
-#   action [:start, :enable]
+#
+# package 'mongodb-org' do
+#   options '--allow-unauthenticated'
+#   action :install
 # end

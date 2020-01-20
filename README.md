@@ -30,3 +30,19 @@ Create a recipe that installs and configures this cookbook correctly to pass all
 ## Test on AWS
 - aws configure
 -  KITCHEN_YAML=kitchen.cloud.yml kitchen test
+
+## Using chef syntax:
+apt_repository 'mongodb-org' do
+  uri 'http://repo.mongodb.org/apt/ubuntu/'
+  distribution 'xenial/mongodb-org/3.2'
+  components ['multiverse']
+  keyserver 'hkp://keyserver.ubuntu.com:80'
+  key 'EA312927'
+  action :add
+end
+
+
+package 'mongodb-org' do
+  options '--allow-unauthenticated'
+  action :install
+end
