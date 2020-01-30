@@ -4,7 +4,7 @@
     "aws_secret_key": "{{env `AWS_SECRET_KEY_ID`}}"
   },
   "builders": [{
-    "ami_name": "daniel-chow-Mongodb-NodeSampleApp-{{timestamp}}",
+    "ami_name": "daniel-chow-Mongodb-NodeSampleApp-Ubuntu16-{{timestamp}}",
 
     "type": "amazon-ebs",
     "access_key": "{{user `aws_access_key`}}",
@@ -20,7 +20,7 @@
     "source_ami_filter": {
       "filters": {
         "virtualization-type": "hvm",
-        "name": "*ubuntu-bionic-18.04-amd64-server-*",
+        "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
         "root-device-type": "ebs"
       },
       "owners": ["099720109477"],
